@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adicionar Noticia</title>
+</head>
+
+<body>
+    <h1>Adicionar Noticia</h1>
+    <hr>
+    <% if (erros) { %>
+        <ul>
+            <% for(var i = 0; i < erros.length; i++){ %>
+            <li>
+                <%= erros[i].msg %>
+            </li>
+            <% } %>
+        </ul>
+    <% } %>
+    <form action="noticias/salvar" method="POST">
+        <p>
+            <label>Título</label>
+            <input type="text" name="titulo">
+        </p>
+        <p>
+            <label>Resumo</label>
+            <input type="text" name="resumo">
+        </p>
+        <p>
+            <label>Nome do autor</label>
+            <input type="text" name="autor">
+        </p>
+        <p>
+            <label>Data dos fatos</label>
+            <input type="date" name="data_noticia">
+        </p>
+        <p><label for="noticia">Notícia</label>
+            <textarea name="noticia" id="noticia" cols="30" rows="10"></textarea></p>
+        <hr>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
